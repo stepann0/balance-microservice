@@ -1,0 +1,52 @@
+curl -X PUT http://localhost:8080/ --data '{"name": "Sofia", "balance": 45000}';echo
+curl -X PUT http://localhost:8080/ --data '{"name": "Stepa", "balance": 4000}';echo
+curl -X PUT http://localhost:8080/ --data '{"name": "Alina", "balance": 5000}';echo
+curl -X PUT http://localhost:8080/ --data '{"name": "Vlad", "balance": 123000}';echo
+
+curl -X POST http://localhost:8080/increase --data '{"id":1, "amount": 5000}';echo
+curl -X POST http://localhost:8080/increase --data '{"id":2, "amount": 1999}';echo
+curl -X POST http://localhost:8080/increase --data '{"id":3, "amount": 2500}';echo
+curl -X POST http://localhost:8080/increase --data '{"id":4, "amount": 1900}';echo
+
+curl -X POST http://localhost:8080/reserve --data '{"user_id":4,"service_id":2,"amount": 2000}';echo
+curl -X PUT http://localhost:8080/accept --data '{"user_id":4,"service_id":2,"amount": 2000}';echo
+
+curl -X POST http://localhost:8080/reserve --data '{"user_id":1,"service_id":2,"amount": 1100000000}';echo
+curl -X PUT http://localhost:8080/accept --data '{"user_id":1,"service_id":2,"amount": 1100000000}';echo
+
+curl -X POST http://localhost:8080/reserve --data '{"user_id":1,"service_id":2,"amount": 100}';echo
+curl -X PUT http://localhost:8080/accept --data '{"user_id":1,"service_id":2,"amount": 100}';echo
+
+curl -X POST http://localhost:8080/reserve --data '{"user_id":1,"service_id":3,"amount": 1199}';echo
+curl -X PUT http://localhost:8080/accept --data '{"user_id":1,"service_id":3,"amount": 1199}';echo
+
+curl -X POST http://localhost:8080/reserve --data '{"user_id":2,"service_id":3,"amount": 1200}';echo
+curl -X PUT http://localhost:8080/accept --data '{"user_id":2,"service_id":3,"amount": 1200}';echo
+
+curl -X POST http://localhost:8080/reserve --data '{"user_id":3,"service_id":1,"amount": 999}';echo
+curl -X PUT http://localhost:8080/accept --data '{"user_id":3,"service_id":1,"amount": 999}';echo
+
+curl -X POST http://localhost:8080/reserve --data '{"user_id":3,"service_id":1,"amount": 499}';echo
+curl -X PUT http://localhost:8080/accept --data '{"user_id":3,"service_id":1,"amount": 499}';echo
+
+curl -X POST http://localhost:8080/reserve --data '{"user_id":3,"service_id":1,"amount": 99}';echo
+curl -X PUT http://localhost:8080/accept --data '{"user_id":3,"service_id":1,"amount": 99}';echo
+
+curl -X POST http://localhost:8080/reserve --data '{"user_id":3,"service_id":4,"amount": 99}';echo
+curl -X PUT http://localhost:8080/accept --data '{"user_id":3,"service_id":4,"amount": 99}';echo
+
+curl -X POST http://localhost:8080/reserve --data '{"user_id":4,"service_id":4,"amount": 5000}';echo
+curl -X PUT http://localhost:8080/accept --data '{"user_id":4,"service_id":4,"amount": 5000}';echo
+
+curl -X POST http://localhost:8080/reserve --data '{"user_id":4,"service_id":4,"amount": 1299}';echo
+curl -X PUT http://localhost:8080/accept --data '{"user_id":4,"service_id":4,"amount": 1299}';echo
+
+curl -X POST http://localhost:8080/reserve --data '{"user_id":3,"service_id":3,"amount": 1000}';echo
+curl -X PUT http://localhost:8080/decline --data '{"user_id":3,"service_id":3,"amount": 1000}';echo
+
+curl -X GET http://localhost:8080/1;echo
+curl -X GET http://localhost:8080/2;echo
+curl -X GET http://localhost:8080/3;echo
+curl -X GET http://localhost:8080/4;echo
+
+curl -X GET http://localhost:8080/report/11/202;echo
